@@ -15,7 +15,8 @@ public class Bot {
                 .addEventListeners(new PingListener(),
                         new JoinListener(),
                         new BasicCommand(),
-                        new OverwatchCommand()
+                        new OverwatchCommand(),
+                        new InventoryCommand()
                 )
                 .build()
                 .awaitReady();
@@ -28,7 +29,9 @@ public class Bot {
                 Commands.slash("help", "Learn about jangs bot"),
                 Commands.slash("ow", "Overwatch stats lookup.")
                         .addOption(OptionType.STRING, "type", "type of lookup: rank, hero")
-                        .addOption(OptionType.STRING, "arg", "argument for lookup: user name#tag, hero name")
+                        .addOption(OptionType.STRING, "arg", "argument for lookup: user name#tag, hero name"),
+                Commands.slash("fish", "\uD83C\uDFA3 Cast your line!"),
+                Commands.slash("inventory", "View your inventory!")
         ).queue();
     }
 }
